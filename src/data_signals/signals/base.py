@@ -11,6 +11,9 @@ class Signal:
     def column(self):
         if len(self.columns) == 1:
             return self.columns[0]
+        # TODO: multi-column signals like OrderSignal,
+        # checks whether values of columns are ordered ascending/descending,
+        # e.g. values of column a must always exceed values of column b
         raise Exception("Signal can only be applied to a single column.")
 
     @property
