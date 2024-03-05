@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-requires = ["pandas"]
+requires = ["pandas", "pyarrow"]
 
 dev_requires = ["bump2version", "pytest", "pytest-sugar", "seaborn"]
 

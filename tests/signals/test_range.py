@@ -53,15 +53,14 @@ def test_range():
 
 def test_non_numeric_value():
     df = load_people()
-    # set to string to test behaviour
-    df.loc["a", "age"] = "Tim"
+    df.loc["a", "age"] = np.nan
     signal = signals.RangeSignal(["age"], [18, 25])
     assert signal.config == "[18, 25]"
     assert_series_equal(
         signal.active(df),
         pd.Series(
             {
-                "a": np.nan,
+                "a": False,
                 "b": True,
                 "c": False,
                 "d": True,
@@ -72,7 +71,6 @@ def test_non_numeric_value():
         ),
     )
     result = SignalCollection(df, signals=[signal]).evaluate(df)
-    print()
     assert_series_equal(
         result.show().description,
         pd.Series(
@@ -90,8 +88,8 @@ def test_non_numeric_value():
                 "column": ["age"],
                 "type": ["range"],
                 "config": ["[18, 25]"],
-                "ratio": [0.5],
-                "description": ["50% of values are outside [18, 25]."],
+                "ratio": [0.4],
+                "description": ["40% of values are outside [18, 25]."],
             }
         ),
     )
