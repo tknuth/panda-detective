@@ -5,7 +5,7 @@ from typing import Optional
 import numpy as np
 import pandas as pd
 
-from panda_detective.core import ignore_na
+from data_signals.core import ignore_na
 
 from .base import Signal
 

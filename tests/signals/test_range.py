@@ -1,6 +1,6 @@
-from panda_detective import signals
-from panda_detective.collection import SignalCollection
-from panda_detective.testing import load_people
+from data_signals import signals
+from data_signals.collection import SignalCollection
+from data_signals.testing import load_people
 from pandas.testing import assert_series_equal, assert_frame_equal
 import numpy as np
 import pandas as pd

@@ -1,5 +1,5 @@
-from panda_detective.collection import *
-from panda_detective.testing import load_people
+from data_signals.collection import *
+from data_signals.testing import load_people
 import numpy as np
 import pandas as pd
 
