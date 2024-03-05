@@ -37,7 +37,7 @@ class RangeSignal(Signal):
         series.loc[mask] = ~df.loc[mask, self.column].between(self.min, self.max)
         return series
 
-    def describe(self, series: pd.Series) -> pd.Series | None:
+    def describe(self, series: pd.Series) -> Optional[pd.Series]:
         if series.active:
             return f"Value {series.value:.0f} is outside {self.config}."
 

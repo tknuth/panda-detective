@@ -31,7 +31,7 @@ class ValuesSignal(Signal):
             return ~series
         return series.astype("boolean")
 
-    def describe(self, series: pd.Series) -> pd.Series | None:
+    def describe(self, series: pd.Series) -> Optional[pd.Series]:
         if series.active:
             return f"Value {series.value} is not allowed."
 
