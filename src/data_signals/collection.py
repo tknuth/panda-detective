@@ -52,6 +52,7 @@ class SignalCollection:
         # TODO: also accept functions
         return SignalCollection(self.df, selection=args, signals=self.signals)
 
+    # TODO: rename to range
     def range(self, range_):
         return self._register(RangeSignal, range_)
 
